@@ -3,8 +3,6 @@ const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLList } = graphql;
 const  BookType  = require('./BookType');
 const Books = require('../models/Books');
 
-
-
 const AuthorType = new GraphQLObjectType({
     name: 'Author',
     fields: () => ({
