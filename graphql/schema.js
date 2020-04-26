@@ -8,7 +8,8 @@ const {
     GraphQLObjectType,
     GraphQLString,
     GraphQLSchema,
-    GraphQLID
+    GraphQLID,
+    GraphQLList
 } = graphql;
 
 const RootQuery = new GraphQLObjectType({
@@ -26,6 +27,16 @@ const RootQuery = new GraphQLObjectType({
             args: {id: {type: GraphQLID}},
             resolve(parent, args){
                return   AuthorModel.findById(args.id);
+            }
+        },
+
+        bookByName: {
+            type: new GraphQLList(BookType),
+            args: {name: {type: GraphQLString}},
+            resolve(parent, args){
+               return Books.find({name: args.name}).then((docs) => {
+                  return docs;
+               })
             }
         }
     }

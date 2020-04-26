@@ -1,7 +1,7 @@
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLString, GraphQLID } = graphql;
-const AuthorType = require('./AuthorType');
-const Author = require('../models/Author');
+//const AuthorType = require('./AuthorType');
+//const Author = require('../models/Author');
 
 const BookType = new GraphQLObjectType({
     name: 'Book',
@@ -21,3 +21,6 @@ const BookType = new GraphQLObjectType({
 })
 
 module.exports = BookType;
+
+const AuthorType = require('./AuthorType');
+const Author = require('../models/Author');

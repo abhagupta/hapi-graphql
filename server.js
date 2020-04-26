@@ -51,7 +51,7 @@ const init = async() => {
           console.log("id", id);
            return Author.find({id: id});
         }
-    },
+      },
         {
             method: 'POST',
             path: '/book',
