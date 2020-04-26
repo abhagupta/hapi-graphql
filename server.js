@@ -43,6 +43,15 @@ const init = async() => {
              return Author.find();
           }
       },
+      {
+        method: 'GET',
+        path: '/api/v1/authors/{id}',
+        handler: (req, reply) => {
+          const id = req.params.id;
+          console.log("id", id);
+           return Author.find({id: id});
+        }
+    },
         {
             method: 'POST',
             path: '/book',
