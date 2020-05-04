@@ -9,7 +9,10 @@ const schema = require('./graphql/schema');
 
 const server = hapi.server({
     port: 5000,
-    host: 'localhost'
+    host: 'localhost',
+    routes: {
+      cors: true
+  }
 });
 
 mongoose.connect('mongodb://127.0.0.1:27017/books', {useNewUrlParser: true,  useUnifiedTopology: true });
